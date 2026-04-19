@@ -1,0 +1,34 @@
+cse@CSE-Lab-Fac-PC:~$ psql
+psql (14.19 (Ubuntu 14.19-0ubuntu0.22.04.1))
+Type "help" for help.
+
+cse=# CREATE ROLE alice LOGIN;
+ALTER ROLE alice WITH PASSWORD 'alice123';
+CREATE DATABASE cse4308_12345 OWNER alice;
+GRANT ALL PRIVILEGES ON DATABASE cse4308_12345 TO alice;
+CREATE ROLE
+ALTER ROLE
+CREATE DATABASE
+GRANT
+cse=# \q
+
+
+cse@CSE-Lab-Fac-PC:~$ psql -f /home/cse/Downloads/lab2.sql
+psql:/home/cse/Downloads/lab2.sql:8: NOTICE:  table "students" does not exist, skipping
+DROP TABLE
+psql:/home/cse/Downloads/lab2.sql:9: NOTICE:  table "courses" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 3
+INSERT 0 3
+
+
+cse=# \dt
+         List of relations
+ Schema |   Name   | Type  | Owner 
+--------+----------+-------+-------
+ public | courses  | table | cse
+ public | students | table | cse
+(2 rows)
+
